@@ -14,6 +14,7 @@ public class Bai1 {
             }
         }
         System.out.println(sum);
+        scanner.close();
     }
    
 }

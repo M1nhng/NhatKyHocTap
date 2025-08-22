@@ -7,7 +7,15 @@ public class Bai4 {
         int a =scanner.nextInt();
         int b = scanner.nextInt();
         int c = scanner.nextInt();
-        int max = Integer.max(a, b);
+        if (a > b && a > c){
+            System.out.println(a);
+        }
+        if(b > c && b > a){
+            System.out.println(b);
+        }
+        if(c > b && c > a){
+            System.out.println(c);
+        }
         scanner.close();
     }
 }
