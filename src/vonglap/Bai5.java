@@ -11,4 +11,5 @@ public class Bai5 {
         }else System.out.println("The score is not valid");
         scanner.close();
     }
+    //end
 }
