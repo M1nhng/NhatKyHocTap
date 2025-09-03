@@ -8,7 +8,6 @@ public class Bai1 {
         String s = scanner.nextLine();
         long cnt = 0;
         for(int i = 0; i < s.length(); i++){
-            
             if(s.charAt(i) == '4' || s.charAt(i) == '7'){
                 cnt++;
             }
