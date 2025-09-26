@@ -19,7 +19,7 @@ public class Student {
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Student student1 = new Student(scanner.nextLine(), scanner.nextLine(), scanner.nextInt(), scanner.nextLine());
+        Student student1 = new Student(scanner.nextLine(), scanner.nextLine(), Integer.parseInt(scanner.nextLine()), scanner.nextLine());
         student1.output();
     }
 }
