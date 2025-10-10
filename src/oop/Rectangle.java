@@ -6,20 +6,10 @@ class Rectangle {
 	private double length;
 	private double width;
 	public Rectangle(double length, double width) {
-		super();
 		this.length = length;
 		this.width = width;
 	}
 	
-	void getInfor() {
-		System.out.println(getArea());
-	
-	}
-	
-	void display() {
-		System.out.println(getArea());
-	}
-
 	public double getLength() {
 		return length;
 	}
@@ -44,8 +34,6 @@ class Rectangle {
 		double findPermimeter = retangle.getPerimeter();
 		
 		System.out.println(findArea + " " + findPermimeter);
-		
-		
 	}
 }
 
