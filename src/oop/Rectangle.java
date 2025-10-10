@@ -18,6 +18,14 @@ class Rectangle {
 		return width;
 	}
 
+	public void setLength(double length){
+		this.length = length;
+	}
+
+	public void setWidth(double width){
+		this.width = width;
+	}
+
 	public double getArea() {
 		return length * width;
 	}
@@ -29,11 +37,11 @@ class Rectangle {
 	
 	public static void main(String[] agrs) {
 		Scanner scanner = new Scanner(System.in);
-		Rectangle retangle = new Rectangle(scanner.nextDouble(), scanner.nextDouble());
-		double findArea = retangle.getArea();
-		double findPermimeter = retangle.getPerimeter();
+		double length = scanner.nextDouble();
+		double width = scanner.nextDouble();
+		Rectangle retangle = new Rectangle(length, width);
 		
-		System.out.println(findArea + " " + findPermimeter);
+		System.out.println("Area: " + retangle.getArea()  + "\nPerimeter: " + retangle.getPerimeter());
 	}
 }
 
