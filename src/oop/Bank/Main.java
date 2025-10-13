@@ -30,37 +30,67 @@ public class Main {
 
                     account = new Account(name, balance);
                     list.add(account);
-                    System.out.println("Da tao thanh cong!");
+                    System.out.println("Da tao thanh cong!, ID: " + account.getId());
                     break;
 
                 case 2:
-                    if(account == null){
+                    if(list.isEmpty()){
                         System.out.println("Khong co tai khoan, hay tao tai khoan moi!");
-
+                        break;
                     }
                     for (Account showAccount : list) {
-                        System.out.println(showAccount);
+                        showAccount.display();
                     }
                     break;
                 
                 case 3:
-                    System.out.println("So tien can nap: ");
-                    int amount = scanner.nextInt();
-                    if(account == null){
-                        System.out.println("Khong co ngan hang, VUI LONG TAO MOI!");
+                    if (list.isEmpty()) {
+                        System.out.println("Khong co tai khoan, hay tao tai khoan moi!");
                         break;
                     }
-                    account.deposit(amount);
+                    System.out.print("Nhap ID tai khoan can nap tien: ");
+                    String depositId = scanner.nextLine();
+                    Account accToDeposit = null;
+                    for (Account acc : list) {
+                        if (acc.getId().equals(depositId)) {
+                            accToDeposit = acc;
+                            break;
+                        }
+                    }
+
+                    if (accToDeposit == null) {
+                        System.out.println("Loi! Khong tim thay tai khoan voi ID " + depositId);
+                        break;
+                    }
+
+                    System.out.println("So tien can nap: ");
+                    int amount = scanner.nextInt();
+                    scanner.nextLine();
+                    accToDeposit.deposit(amount);
                     break;
                 
                 case 4:
-                    System.out.println("So tien can rut: ");
-                    int amount1 = scanner.nextInt();
-                    if(account == null){
-                        System.out.println("Khong co ngan hang, VUI LONG TAO MOI!");
+                    if (list.isEmpty()) {
+                        System.out.println("Khong co tai khoan, hay tao tai khoan moi!");
                         break;
                     }
-                    account.withdraw(amount1);
+                    System.out.print("Nhap ID tai khoan can rut tien: ");
+                    String withdrawId = scanner.nextLine();
+                    System.out.println("So tien can rut: ");
+                    int amount1 = scanner.nextInt();
+                    scanner.nextLine(); 
+
+                    boolean found = false;
+                    for (Account acc : list) {
+                        if (acc.getId().equals(withdrawId)) {
+                            acc.withdraw(amount1);
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        System.out.println("Loi! Khong tim thay tai khoan voi ID " + withdrawId);
+                    }
                     break;
 
                 case 0:
