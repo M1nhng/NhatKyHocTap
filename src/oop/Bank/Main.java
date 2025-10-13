@@ -1,11 +1,13 @@
 package oop.Bank;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Account account = null;
+        ArrayList<Account> list = new ArrayList<>();
 
         do {
             System.out.println("=== NGÂN HÀNG ABC ===");
@@ -27,6 +29,7 @@ public class Main {
                     int balance = scanner.nextInt();
 
                     account = new Account(name, balance);
+                    list.add(account);
                     System.out.println("Da tao thanh cong!");
                     break;
 
@@ -35,7 +38,9 @@ public class Main {
                         System.out.println("Khong co tai khoan, hay tao tai khoan moi!");
 
                     }
-                    account.display();
+                    for (Account showAccount : list) {
+                        System.out.println(showAccount);
+                    }
                     break;
                 
                 case 3:
@@ -68,5 +73,4 @@ public class Main {
             }
         } while (true);
     }
-
 }
