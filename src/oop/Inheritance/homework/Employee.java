@@ -5,8 +5,8 @@ public class Employee {
     private int salary;
 
     public Employee(String name, int salary) {
-        this.name = name;
-        this.salary = salary;
+        setName(name);
+        setSalary(salary);
     }
 
     public String getName() {
@@ -31,9 +31,7 @@ public class Employee {
 
     
     public void display() {
-        System.out.println("Name: " + name + "\n" + "Salary: " + salary);
+        System.out.println("Name: " + name + "\n+" + "Salary: " + salary);
     }
-
-    
     
 }
